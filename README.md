@@ -1,6 +1,8 @@
 # tls-server-client-python-example
 The code and the explanation for this example was generated using Google's Gemini chatbot.
 It uses ssl library to establish a secure TLS connection between server and client. 
+Typing "make" will run the default target that creates keys and certificates and runs
+the example.
 
 Explanation:
 * Import necessary libraries:
