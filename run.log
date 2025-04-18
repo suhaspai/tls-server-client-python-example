@@ -1,0 +1,52 @@
+
+# Public and Private Keys - Signatures & Key Exchanges - Cryptography - Practical TLS
+https://youtu.be/_zyKvPvh808?feature=shared
+
+# RSA algorithm step by step
+https://youtu.be/j2NBya6ADSY?feature=shared
+
+# OpenSSL Step By Step Tutorial | How to Generate Keys, Certificates & CSR Using OpenSSL
+https://youtu.be/wzbf9ldvBjM?feature=shared
+
+# install netstat 
+https://learnubuntu.com/install-netstat/
+
+# Error: certificate verify failed: Hostname mismatch, certificate is not valid for 'localhost'. (_ssl.c:1000)
+
+# Fix: https://medium.com/@maciej.skorupka/hostname-mismatch-ssl-error-in-python-2901d465683
+/home/suhas/copilot/python/ssl-socket> make csr
+
+openssl req -new -key server.key -out server.csr
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:CA
+Locality Name (eg, city) []:San Diego
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:SELF
+Organizational Unit Name (eg, section) []:WFH
+Common Name (e.g. server FQDN or YOUR name) []:localhost     <-- must specify localhost, can't leave blank
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+/home/suhas/copilot/python/ssl-socket> make verify
+openssl req -text -in server.csr -noout -verify
+Certificate request self-signature verify OK
+
+
+
+
+/home/suhas/copilot/python/ssl-socket> make run
+python3 server.py3 &
+python3 client.py3 &
+/home/suhas/copilot/python/ssl-socket> Server is listening on port 8443...
+Connection from ('127.0.0.1', 52194)
+Received: Hello, TLS Server!
+Received: Hello, TLS Client!
