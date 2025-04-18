@@ -3,9 +3,10 @@ The code and the explanation for this example was generated using Google's Gemin
 It uses ssl library to establish a secure TLS connection between server and client. 
 
 Explanation:
-Import necessary libraries:
+* Import necessary libraries:
 * socket: For creating and managing TCP/IP sockets.
 * ssl: For enabling TLS/SSL encryption.
+* 
 Server-side:
 * socket.socket(): Creates a TCP/IP socket.
 * ssl.create_default_context(): Creates an SSL context with default settings.
@@ -14,12 +15,14 @@ Server-side:
 * ssock.listen(): Starts listening for incoming connections.
 * ssock.accept(): Accepts a connection from a client.
 * conn.recv()/conn.sendall(): Receives and sends data over the secure connection.
+* 
 Client-side:
 * socket.socket(): Creates a TCP/IP socket.
 * ssl.create_default_context(): Creates an SSL context with default settings.
 * context.wrap_socket(): Wraps the socket with TLS/SSL encryption.
 * ssock.connect(): Connects to the server.
 * ssock.sendall()/ssock.recv(): Sends and receives data over the secure connection.
+* 
 Key points:
 * This example demonstrates basic TLS communication over TCP/IP.
 * Ensure that both the server and client have the necessary certificates and keys configured for secure communication.
